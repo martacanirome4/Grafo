@@ -12,12 +12,7 @@ package org.practica3;
  * language governing permissions and limitations under the
  * License.
  */
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 /**
  *
  *
@@ -34,7 +29,13 @@ public class Graph<V> {
      * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso contrario.
      *******************************************************************/
     public boolean addVertex(V v) {
-        return true;
+        // el vertice no existe, lo creamos
+        if (!containsVertex(v)) {
+            adjacencyList.put(v, new TreeSet<V>());
+            return true;
+        }
+        // ya existía el vertice
+        return false;
     }
 
 
@@ -48,7 +49,13 @@ public class Graph<V> {
      * @return ‘true‘ si no existía el arco y ‘false‘ en caso contrario.
      ******************************************************************/
     public boolean addEdge(V v1, V v2) {
-        return true;
+        addVertex(v1);
+        addVertex(v2);
+        if (!adjacencyList.get(v1).contains(v2)) {
+            adjacencyList.get(v1).add(v2);
+            return true;
+        }
+        return false;
     }
 
     /******************************************************************
@@ -58,7 +65,10 @@ public class Graph<V> {
      * @return conjunto de vértices adyacentes.
      ******************************************************************/
     public Set<V> obtainAdjacents(V v) throws Exception {
-        return new TreeSet<>();
+        if (!containsVertex(v)) {
+            throw new Exception("Vertex not found");
+        }
+        return adjacencyList.get(v);
     }
 
     /******************************************************************
@@ -68,7 +78,7 @@ public class Graph<V> {
      * @return ‘true‘ si ‘v‘ es un vértice del grafo.
      ******************************************************************/
     public boolean containsVertex(V v) {
-        return true;
+        return adjacencyList.containsKey(v);
     }
 
     /******************************************************************
