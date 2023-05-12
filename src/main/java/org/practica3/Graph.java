@@ -1,4 +1,3 @@
-package org.practica3;
 /**
  * Copyright 2023 Marta Canino Romero
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +11,8 @@ package org.practica3;
  * language governing permissions and limitations under the
  * License.
  */
+package org.practica3;
+
 import java.util.*;
 /**
  *
@@ -31,7 +32,7 @@ public class Graph<V> {
     public boolean addVertex(V v) {
         // el vertice no existe, lo creamos
         if (!containsVertex(v)) {
-            adjacencyList.put(v, new TreeSet<V>());
+            adjacencyList.put(v, new TreeSet<>());
             return true;
         }
         // ya existía el vertice

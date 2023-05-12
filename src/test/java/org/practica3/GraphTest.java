@@ -1,4 +1,3 @@
-package org.practica3;
 /**
  * Copyright 2023 Marta Canino Romero
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +11,8 @@ package org.practica3;
  * language governing permissions and limitations under the
  * License.
  */
+package org.practica3;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -23,14 +24,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-class GraphTest {
+public class GraphTest {
 
     Graph<Integer> myGraph;
     Graph<Integer> myEdge;
 
+    @Before
+    public void setup(){
+        myGraph = new Graph<>();
+        myEdge = new Graph<>();
+    }
+
 
     @Test
-    void addVertex() {
+    public void addVertex() {
         Graph<String> graph = new Graph<>();
         assertTrue(graph.addVertex("A"));
         assertTrue(graph.containsVertex("A"));
@@ -38,16 +45,16 @@ class GraphTest {
     }
 
     @Test
-    void addEdgeNonExistentVertex() {
+    public void addEdgeNonExistentVertex() {
     }
 
     @Test
-    void addExistentEdge() {
+    public void addExistentEdge() {
 
     }
 
     @Test
-    void addEdge() throws Exception {
+    public void addEdge() throws Exception {
         Graph<String> graph = new Graph<>();
         graph.addVertex("A");
         graph.addVertex("B");
@@ -59,11 +66,11 @@ class GraphTest {
 
 
     @Test
-    void obtainAdjacentsNonExistentVertex() {
+    public void obtainAdjacentsNonExistentVertex() {
     }
 
     @Test
-    void obtainAdjacents() throws Exception {
+    public void obtainAdjacents() throws Exception {
         Graph<String> graph = new Graph<>();
         graph.addVertex("A");
         graph.addVertex("B");
@@ -74,10 +81,10 @@ class GraphTest {
     }
 
     @Test
-    void containsVertexNonExistentVertex() {}
+    public void containsVertexNonExistentVertex() {}
 
     @Test
-    void containsVertex() {
+    public void containsVertex() {
         Graph<String> graph = new Graph<>();
         assertFalse(graph.containsVertex("A"));
         graph.addVertex("A");
@@ -85,11 +92,11 @@ class GraphTest {
     }
 
     @Test
-    void depthFirstSearch() {
+    public void depthFirstSearch() {
     }
 
     @Test
-    void breadthFirstSearch() {
+    public void breadthFirstSearch() {
     }
 
     @Test

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.practica3.GraphTest" time="0.043" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.practica3.GraphTest" time="0.061" tests="11" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter9129354071397460114.jar /Users/martacaninoromero/IdeaProjects/graph/target/surefire 2023-05-12T12-29-22_048-jvmRun1 surefire3408770657305291779tmp surefire_04435576778630256066tmp"/>
+    <property name="sun.java.command" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter14158302748646165098.jar /Users/martacaninoromero/IdeaProjects/graph/target/surefire 2023-05-12T12-36-19_227-jvmRun1 surefire2335971102545975190tmp surefire_09362357360299562207tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/test-classes:/Users/martacaninoromero/IdeaProjects/graph/target/classes:/Users/martacaninoromero/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/martacaninoromero/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter9129354071397460114.jar"/>
+    <property name="surefire.real.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter14158302748646165098.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="20"/>
@@ -58,21 +58,19 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="initializationError" classname="org.practica3.GraphTest" time="0.005">
-    <error message="Invalid test class &apos;org.practica3.GraphTest&apos;:&#10;  1. The class org.practica3.GraphTest is not public.&#10;  2. Test class should have exactly one public constructor&#10;  3. Method containsVertexNonExistentVertex() should be public&#10;  4. Method depthFirstSearch() should be public&#10;  5. Method addEdge() should be public&#10;  6. Method breadthFirstSearch() should be public&#10;  7. Method addExistentEdge() should be public&#10;  8. Method containsVertex() should be public&#10;  9. Method addVertex() should be public&#10;  10. Method obtainAdjacentsNonExistentVertex() should be public&#10;  11. Method obtainAdjacents() should be public&#10;  12. Method addEdgeNonExistentVertex() should be public" type="org.junit.runners.model.InvalidTestClassError">org.junit.runners.model.InvalidTestClassError: 
-Invalid test class 'org.practica3.GraphTest':
-  1. The class org.practica3.GraphTest is not public.
-  2. Test class should have exactly one public constructor
-  3. Method containsVertexNonExistentVertex() should be public
-  4. Method depthFirstSearch() should be public
-  5. Method addEdge() should be public
-  6. Method breadthFirstSearch() should be public
-  7. Method addExistentEdge() should be public
-  8. Method containsVertex() should be public
-  9. Method addVertex() should be public
-  10. Method obtainAdjacentsNonExistentVertex() should be public
-  11. Method obtainAdjacents() should be public
-  12. Method addEdgeNonExistentVertex() should be public
-</error>
+  <testcase name="containsVertexNonExistentVertex" classname="org.practica3.GraphTest" time="0.005"/>
+  <testcase name="depthFirstSearch" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="addEdge" classname="org.practica3.GraphTest" time="0.006">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at org.practica3.GraphTest.addEdge(GraphTest.java:63)
+</failure>
   </testcase>
+  <testcase name="breadthFirstSearch" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="addExistentEdge" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="containsVertex" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="addVertex" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="OnePath" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="obtainAdjacentsNonExistentVertex" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="obtainAdjacents" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="addEdgeNonExistentVertex" classname="org.practica3.GraphTest" time="0"/>
 </testsuite>
