@@ -1,0 +1,35 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Graph<V> {
+  + Graph(): 
+  - adjacencyList: Map<V, Set<V>>
+  + obtainAdjacents(V): Set<V>
+  + onePath(V, V): List<V>
+  + containsVertex(V): boolean
+  + addEdge(V, V): boolean
+  + toString(): String
+  + addVertex(V): boolean
+}
+class GraphTest {
+  + GraphTest(): 
+  ~ myEdge: Graph<String>
+  ~ myGraph: Graph<String>
+  + testToString(): void
+  + addVertexFalse(): void
+  + obtainAdjacents(): void
+  + containsVertexFalse(): void
+  + addEdge(): void
+  + OnePath(): void
+  + addVertex(): void
+  + setup(): void
+  + addEdgeFalse(): void
+  + containsVertex(): void
+  + obtainAdjacentsFalse(): void
+}
+
+GraphTest "1" *-[#595959,plain]-> "myGraph\n1" Graph     
+@enduml
