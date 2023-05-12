@@ -23,6 +23,10 @@ El método principal implementado en este proyecto es el método findPath.
 Este método toma dos vértices como entrada y devuelve el camino más corto entre ellos usando BFS. 
 BFS es un algoritmo de recorrido de gráficos que explora todos los vértices en el mismo nivel antes de pasar al siguiente.
 
+Visualmente:
+![ejemplo_grafo](https://github.com/martacanirome4/Grafo/assets/50625677/4f90702b-6b46-4457-98d6-256170bf8f4e)
+
+Fuente: https://www.softwaretestinghelp.com/java-graph-tutorial/
 
 ## Compilar y ejecutar el proyecto
 
