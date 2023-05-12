@@ -1,7 +1,7 @@
 # Grafo
 
 
-# Compilar y ejecutar el proyecto
+## Compilar y ejecutar el proyecto
 
 Para compilar y ejecutar el proyecto, y al tratarse de un proyecto 'Maven' será necesario:
 
@@ -12,7 +12,7 @@ Para compilar y ejecutar el proyecto, y al tratarse de un proyecto 'Maven' será
 
 Automáticamente, el proyecto será compilado y los tests serán ejecutados, mostrando por pantalla aquellos que no hayan pasado con éxito, o no.
 
-# Documentación
+## Documentación
 Además de la implementación del proyecto, dentro del fichero se encuentran una serie de archivos de apoyo, los cuales son:
 - Diagrama UML de la estructura de clases y funciones, en los archivos:
   - GraphDiagram.png
@@ -22,10 +22,10 @@ Además de la implementación del proyecto, dentro del fichero se encuentran una
   - /target/site/apidocs
   
 
-## Autor
+### Autor
 Marta Canino Romero, @martacanirome4 - GitHub 2023
 
-## Licencia
+### Licencia
 Copyright 2023 Marta Canino Romero
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
