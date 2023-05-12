@@ -90,7 +90,16 @@ public class Graph<V> {
      ******************************************************************/
     @Override
     public String toString() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        for (V vertex : adjacencyList.keySet()) {
+            sb.append(vertex).append(": ");
+            Set<V> adjacents = adjacencyList.get(vertex);
+            for (V adjacent : adjacents) {
+                sb.append(adjacent).append(", ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
     /*********************************************************

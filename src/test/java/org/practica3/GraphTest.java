@@ -83,5 +83,23 @@ public class GraphTest {
         assertNull(myGraph.onePath("B", "A"));
     }
 
+    @Test
+    public void testToString() {
+        Graph<String> graph = new Graph<>();
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "C");
+        graph.addEdge("B", "D");
+        graph.addEdge("C", "D");
+        graph.addEdge("C", "E");
+        graph.addEdge("D", "E");
+
+        String expected = "A: B, C, \n" +
+                "B: D, \n" +
+                "C: D, E, \n" +
+                "D: E, \n" +
+                "E: \n";
+        assertEquals(expected, graph.toString());
+    }
+
 
 }
