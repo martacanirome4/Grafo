@@ -26,6 +26,8 @@ public class Graph<V> {
 
     /******************************************************************
      * Añade el vértice ‘v‘ al grafo.
+     * La complejidad temporal es O(1) para insertar un vértice en adjacencyList usando el método put() TreeSet.
+     * La complejidad espacial es O(1) para almacenar el vértice en la lista de adyacencia.
      *
      * @param v vértice a añadir.
      * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso contrario.
@@ -42,9 +44,13 @@ public class Graph<V> {
 
 
     /******************************************************************
-     * Añade un arco entre los vértices ‘v1‘ y ‘v2‘ al grafo. En
-     * caso de que no exista alguno de los vértices, lo añade
-     * también.
+     * Añade un arco entre los vértices ‘v1‘ y ‘v2‘ al grafo.
+     * En caso de que no exista alguno de los vértices, lo añade también.
+     * La complejidad temporal es O(log n) para agregar un arco a la lista de adyacencia de v1 usando la clase TreeSet
+     * donde n es el número de vértices en la lista de adyacencia.
+     * La complejidad temporal en el peor de los casos para agregar un vértice es O(n log n),
+     * donde n es el número de vértices en la lista de adyacencia, si se crea un nuevo TreeSet para cada nuevo vértice
+     * La complejidad espacial es O(1) para almacenar el arco en la lista de adyacencia.
      *
      * @param v1 el origen del arco.
      * @param v2 el destino del arco.
@@ -62,6 +68,8 @@ public class Graph<V> {
 
     /******************************************************************
      * Obtiene el conjunto de vértices adyacentes a ‘v‘.
+     * La complejidad temporal es O(1) para obtener los vértices adyacentes de un vértice usando el método get().
+     * La complejidad espacial es O(1) para almacenar los vértices adyacentes en el HashSet.
      *
      * @param v vértice del que se obtienen los adyacentes.
      * @return conjunto de vértices adyacentes.
@@ -75,6 +83,9 @@ public class Graph<V> {
 
     /******************************************************************
      * Comprueba si el grafo contiene el vértice dado.
+     * La complejidad temporal es O(1) para verificar si un vértice está presente en la Lista de adyacencia usando el
+     * método containsKey() de la clase HashMap.
+     * La complejidad espacial es O(1).
      *
      * @param v vértice para el que se realiza la comprobación.
      * @return ‘true‘ si ‘v‘ es un vértice del grafo.
@@ -85,6 +96,11 @@ public class Graph<V> {
 
     /******************************************************************
      * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
+     * La complejidad temporal es O(n^2), donde n es el número de vértices en la lista de adyacencia,
+     * para construir la representación de cadena de la lista de adyacencia iterando a través de todos los vértices y
+     * sus vértices adyacentes.
+     * La complejidad espacial es O(n^2) para almacenar la representación de cadena de la lista de adyacencia.
+     *
      * @return una cadena de caracteres con la lista de
      * adyacencia.
      ******************************************************************/
@@ -105,6 +121,9 @@ public class Graph<V> {
     /*********************************************************
      * Obtiene, en caso de que exista, un camino entre ‘v1‘ y
      * ‘v2‘. En caso contrario, devuelve ‘null‘.
+     * La complejidad temporal es O(|V|+|E|), donde |V| es el número de vértices y |E| es el número de aristas,
+     * para realizar una búsqueda primero en amplitud (BFS) de v1 a v2 y construir la ruta de v1 a v2 usando HashMap.
+     * La complejidad espacial es O(|V|+|E|) para almacenar la cola, el mapa y el conjunto visitado.
      *
      * @param v1 el vértice origen.
      * @param v2 el vértice destino.
@@ -123,7 +142,7 @@ public class Graph<V> {
         while (!queue.isEmpty()) {
             V curr = queue.poll();
             if (curr.equals(v2)) {
-                // found the destination, construct the path
+                // se ha encontrado el vertice destino, construimos el camino
                 List<V> path = new ArrayList<>();
                 while (curr != null) {
                     path.add(curr);
@@ -140,7 +159,7 @@ public class Graph<V> {
                 }
             }
         }
-        return null; // no path found
+        return null; // no se ha encontrado camino
     }
 
 }
