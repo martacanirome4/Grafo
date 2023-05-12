@@ -8,8 +8,19 @@ Para compilar y ejecutar el proyecto, y al tratarse de un proyecto 'Maven' será
 1. Clonar el repositorio en su sistema
 2. Abrir una terminal y navegar hasta el directorio del proyecto
 3. Ejecuta el comando 'mvn test'
+4. Ejecuta el comando 'mvn javadoc:javadoc'
 
 Automáticamente, el proyecto será compilado y los tests serán ejecutados, mostrando por pantalla aquellos que no hayan pasado con éxito, o no.
+
+# Documentación
+Además de la implementación del proyecto, dentro del fichero se encuentran una serie de archivos de apoyo.
+- Diagrama UML de la estructura de clases y funciones, en los archivos:
+  - GraphDiagram.png
+  - GraphPlantUML.xmi
+  - graphDiagram.uml
+- Javadoc con documentación acerca del proyecto. La ruta del directorio es:
+  - /target/site/apidocs
+  
 
 ## Autor
 Marta Canino Romero, @martacanirome4 - GitHub 2023
