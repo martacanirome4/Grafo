@@ -22,8 +22,8 @@ import static org.junit.Assert.*;
 
 public class GraphTest {
 
-    Graph<String> myGraph;
-    Graph<String> myEdge;
+    Graph<Integer> myGraph;
+    Graph<Integer> myEdge;
 
     @Before
     public void setup(){
@@ -32,84 +32,136 @@ public class GraphTest {
     }
 
     @Test
+    public void testAddVertex() {
+        assertTrue(myGraph.addVertex(1));
+        assertFalse(myGraph.addVertex(1));
+    }
+
+    @Test
     public void addVertex() {
-        assertTrue(myGraph.addVertex("A"));
-        assertTrue(myGraph.containsVertex("A"));
-        assertFalse(myGraph.addVertex("A"));
-        assertFalse(myGraph.containsVertex("B"));
+        assertTrue(myGraph.addVertex(1));
+        assertTrue(myGraph.containsVertex(1));
+        assertFalse(myGraph.addVertex(1));
+        assertFalse(myGraph.containsVertex(2));
     }
 
     @Test
     public void addVertexFalse() {
-        assertTrue(myGraph.addVertex("A"));
-        assertFalse(myGraph.containsVertex("B"));
+        assertTrue(myGraph.addVertex(1));
+        assertFalse(myGraph.containsVertex(2));
+    }
+
+    @Test
+    public void testAddEdge() {
+        assertTrue(myGraph.addEdge(1, 2));
+        assertTrue(myGraph.addEdge(1, 3));
+        assertFalse(myGraph.addEdge(1, 2));
+        assertFalse(myGraph.addEdge(2, 1));
+        assertFalse(myGraph.addEdge(3, 4));
+        assertTrue(myGraph.containsVertex(1));
+        assertTrue(myGraph.containsVertex(2));
+        assertTrue(myGraph.containsVertex(3));
+        assertFalse(myGraph.containsVertex(4));
     }
 
     @Test
     public void addEdge() {
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        assertTrue(myGraph.addEdge("A", "B"));
+        myGraph.addVertex(1);
+        myGraph.addVertex(2);
+        assertTrue(myGraph.addEdge(1, 2));
     }
 
     @Test
     public void addEdgeFalse() {
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        assertTrue(myGraph.addEdge("A", "B"));
-        assertFalse(myGraph.addEdge("A", "B"));
+        myGraph.addVertex(1);
+        myGraph.addVertex(2);
+        assertTrue(myGraph.addEdge(1, 2));
+        assertFalse(myGraph.addEdge(1, 2));
+    }
+
+    @Test
+    public void testObtainAdjacents() throws Exception {
+        myGraph.addEdge(1, 2);
+        myGraph.addEdge(1, 3);
+        myGraph.addEdge(2, 3);
+        myGraph.addEdge(2, 4);
+        assertEquals(2, myGraph.obtainAdjacents(1).size());
+        assertTrue(myGraph.obtainAdjacents(1).contains(2));
+        assertTrue(myGraph.obtainAdjacents(1).contains(3));
+        assertEquals(2, myGraph.obtainAdjacents(2).size());
+        assertTrue(myGraph.obtainAdjacents(2).contains(3));
+        assertTrue(myGraph.obtainAdjacents(2).contains(4));
+        assertThrows(Exception.class, () -> myGraph.obtainAdjacents(5));
     }
 
     @Test
     public void obtainAdjacents() throws Exception {
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addEdge("A", "B");
-        Set<String> adjacents = myGraph.obtainAdjacents("A");
+        myGraph.addVertex(1);
+        myGraph.addVertex(2);
+        myGraph.addEdge(1, 2);
+        Set<Integer> adjacents = myGraph.obtainAdjacents(1);
         assertEquals(adjacents.size(), 1);
-        assertTrue(adjacents.contains("B"));
+        assertTrue(adjacents.contains(2));
     }
 
     @Test
     public void obtainAdjacentsFalse() throws Exception {
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addEdge("A", "B");
-        Set<String> adjacents = myGraph.obtainAdjacents("A");
-        assertFalse(adjacents.contains("C"));
+        myGraph.addVertex(1);
+        myGraph.addVertex(2);
+        myGraph.addEdge(1, 2);
+        Set<Integer> adjacents = myGraph.obtainAdjacents(1);
+        assertFalse(adjacents.contains(3));
+    }
+
+    @Test
+    public void testContainsVertex() {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        assertTrue(graph.containsVertex("A"));
+        assertTrue(graph.containsVertex("B"));
+        assertFalse(graph.containsVertex("C"));
     }
 
     @Test
     public void containsVertex() {
-        assertFalse(myGraph.containsVertex("A"));
-        myGraph.addVertex("A");
-        assertTrue(myGraph.containsVertex("A"));
+        assertFalse(myGraph.containsVertex(1));
+        myGraph.addVertex(1);
+        assertTrue(myGraph.containsVertex(1));
     }
 
     @Test
     public void containsVertexFalse() {
-        myGraph.addVertex("A");
-        assertTrue(myGraph.containsVertex("A"));
-        assertFalse(myGraph.containsVertex("C"));
-        assertFalse(myGraph.addVertex("A"));
+        myGraph.addVertex(1);
+        assertTrue(myGraph.containsVertex(1));
+        assertFalse(myGraph.containsVertex(3));
+        assertFalse(myGraph.addVertex(1));
 
     }
 
+    /**
+     * Este test comprueba que el método ‘onePath(V v1, V v2)‘
+     * encuentra un camino entre ‘v1‘ y ‘v2‘ cuando existe.
+     */
     @Test
-    public void OnePath() {
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addVertex("C");
-        myGraph.addVertex("D");
-        myGraph.addEdge("A", "B");
-        myGraph.addEdge("B", "C");
-        myGraph.addEdge("C", "D");
-        myGraph.addEdge("A", "D");
-        List<String> path = myGraph.onePath("A", "D");
-        assertEquals(path.size(), 2);
-        assertEquals(path.get(0), "A");
-        assertEquals(path.get(1), "D");
-        assertNull(myGraph.onePath("B", "A"));
+    public void onePathFindsAPath(){
+        System.out.println("\nTest onePathFindsAPath");
+        System.out.println("----------------------");
+        // Se construye el grafo.
+        Graph<Integer> g = new Graph<>();
+        g.addEdge(1, 2);
+        g.addEdge(3, 4);
+        g.addEdge(1, 5);
+        g.addEdge(5, 6);
+        g.addEdge(6, 4);
+        // Se construye el camino esperado.
+        List<Integer> expectedPath = new ArrayList<>();
+        expectedPath.add(1);
+        expectedPath.add(5);
+        expectedPath.add(6);
+        expectedPath.add(4);
+        //Se comprueba si el camino devuelto es igual al esperado.
+        assertEquals(expectedPath, g.onePath(1, 4));
     }
 
     @Test
@@ -117,16 +169,9 @@ public class GraphTest {
         Graph<String> graph = new Graph<>();
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
+        graph.addEdge("B", "C");
         graph.addEdge("B", "D");
-        graph.addEdge("C", "D");
-        graph.addEdge("C", "E");
-        graph.addEdge("D", "E");
-
-        String expected = "A: B, C, \n" +
-                "B: D, \n" +
-                "C: D, E, \n" +
-                "D: E, \n" +
-                "E: \n";
+        String expected = "A: B, C\nB: C, D\nC: \nD: \n";
         assertEquals(expected, graph.toString());
     }
 

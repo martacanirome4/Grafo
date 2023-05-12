@@ -34,11 +34,10 @@ public class Graph<V> {
      *******************************************************************/
     public boolean addVertex(V v) {
         // el vertice no existe, lo creamos
-        if (!containsVertex(v)) {
-            adjacencyList.put(v, new TreeSet<>());
+        if (!adjacencyList.containsKey(v)) {
+            adjacencyList.put(v, new HashSet<>());
             return true;
         }
-        // ya existía el vertice
         return false;
     }
 
@@ -75,10 +74,11 @@ public class Graph<V> {
      * @return conjunto de vértices adyacentes.
      ******************************************************************/
     public Set<V> obtainAdjacents(V v) throws Exception {
-        if (!containsVertex(v)) {
+        Set<V> adjacents = adjacencyList.get(v);
+        if (adjacents == null) {
             throw new Exception("Vertex not found");
         }
-        return adjacencyList.get(v);
+        return adjacents;
     }
 
     /******************************************************************
@@ -130,36 +130,24 @@ public class Graph<V> {
      * @return lista con la secuencia de vértices desde ‘v1‘ hasta
      * ‘v2‘ * pasando por arcos del grafo.
      *********************************************************/
-    public List<V> onePath(V v1, V v2) {
-        Queue<V> queue = new LinkedList<>();
-        Map<V, V> prev = new HashMap<>();
-        Set<V> visited = new HashSet<>();
-
-        queue.offer(v1);
-        prev.put(v1, null);
-        visited.add(v1);
-
-        while (!queue.isEmpty()) {
-            V curr = queue.poll();
-            if (curr.equals(v2)) {
-                // se ha encontrado el vertice destino, construimos el camino
-                List<V> path = new ArrayList<>();
-                while (curr != null) {
-                    path.add(curr);
-                    curr = prev.get(curr);
-                }
-                Collections.reverse(path);
-                return path;
-            }
-            for (V adj : adjacencyList.get(curr)) {
-                if (!visited.contains(adj)) {
-                    queue.offer(adj);
-                    prev.put(adj, curr);
-                    visited.add(adj);
+    public List<V> onePath(V v1, V v2){
+        List<V> trazaList = new ArrayList<>();
+        Stack<V> abierta = new Stack<>();
+        abierta.push(v1);
+        boolean encontrado = false;
+        while (!abierta.empty() && !encontrado) {
+            V vertexTraveler = abierta.pop();
+            trazaList.add(vertexTraveler);
+            if(vertexTraveler.equals(v2)){
+                encontrado = true;
+            }else{
+                for (V adjacentsV : this.adjacencyList.get(vertexTraveler)){
+                    abierta.push(adjacentsV);
                 }
             }
+            if(encontrado) return trazaList;
         }
-        return null; // no se ha encontrado camino
+        return null;
     }
 
 }
