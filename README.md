@@ -1,8 +1,8 @@
 # Grafo
 
 En este proyecto se ha implementado una estructura de datos Grafo usando un HashMap como estructura de datos subyacente.
-Esta implementación permite agregar y eliminar vértices y bordes de manera eficiente, y también permite encontrar 
-el camino entre dos vértices mediante búsqueda en amplitud (Breadth First Search) (BFS).
+Esta implementación permite crear y borrar vértices y aristas de manera eficiente, así como encontrar 
+el camino entre dos vértices mediante Búsqueda en Anchura ó Breadth First Search (BFS).
 
 ## ¿Qué es un grafo?
 Un grafo es una estructura de datos que consta de un conjunto de vértices (o nodos) y un conjunto de aristas que 
