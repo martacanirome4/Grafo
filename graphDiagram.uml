@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/martacaninoromero/IdeaProjects/graph</OriginalElement>
+  <nodes>
+    <node x="-64.0" y="-14.0">org.practica3.GraphTest</node>
+    <node x="-35.5" y="456.78688524590166">org.practica3.Graph</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.practica3.GraphTest" target="org.practica3.Graph" relationship="TO_ONE">
+      <point x="0.0" y="181.5" />
+      <point x="0.0" y="-104.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6971428571428572" showDependencies="true" x="95.5" y="336.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
