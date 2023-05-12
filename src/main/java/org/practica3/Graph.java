@@ -1,5 +1,4 @@
 package org.practica3;
-
 /**
  * Copyright 2023 Marta Canino Romero
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +33,7 @@ public class Graph<V> {
      * @param v vértice a añadir.
      * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso contrario.
      *******************************************************************/
-    public boolean addVertex(V v){
+    public boolean addVertex(V v) {
         return true;
     }
 

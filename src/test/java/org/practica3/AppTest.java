@@ -1,5 +1,4 @@
 package org.practica3;
-
 /**
  * Copyright 2023 Marta Canino Romero
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,16 +36,37 @@ class GraphTest {
     }
 
     @Test
+    void addExistentVertex() {
+    }
+
+    @Test
     void addVertex() {
     }
 
     @Test
-    void addEdge() {
+    void addEdgeNonExistentVertex() {
+    }
+
+    @Test
+    void addExistentEdge() {}
+
+    @Test
+    void addEdge() {}
+
+
+    @Test
+    void obtainAdjacentsNonExistentVertex() {
     }
 
     @Test
     void obtainAdjacents() {
     }
+
+    @Test
+    void containsVertexNonExistentVertex() {}
+
+    @Test
+    void containsVertex() {}
 
     @Test
     void depthFirstSearch() {
