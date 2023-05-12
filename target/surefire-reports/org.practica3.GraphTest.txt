@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: org.practica3.GraphTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! - in org.practica3.GraphTest
+initializationError(org.practica3.GraphTest)  Time elapsed: 0.005 s  <<< ERROR!
+org.junit.runners.model.InvalidTestClassError: 
+Invalid test class 'org.practica3.GraphTest':
+  1. The class org.practica3.GraphTest is not public.
+  2. Test class should have exactly one public constructor
+  3. Method containsVertexNonExistentVertex() should be public
+  4. Method depthFirstSearch() should be public
+  5. Method addEdge() should be public
+  6. Method breadthFirstSearch() should be public
+  7. Method addExistentEdge() should be public
+  8. Method containsVertex() should be public
+  9. Method addVertex() should be public
+  10. Method obtainAdjacentsNonExistentVertex() should be public
+  11. Method obtainAdjacents() should be public
+  12. Method addEdgeNonExistentVertex() should be public
+

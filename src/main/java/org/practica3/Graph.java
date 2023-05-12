@@ -101,7 +101,35 @@ public class Graph<V> {
      * ‘v2‘ * pasando por arcos del grafo.
      *********************************************************/
     public List<V> onePath(V v1, V v2) {
-        return new ArrayList<>();
+        Queue<V> queue = new LinkedList<>();
+        Map<V, V> prev = new HashMap<>();
+        Set<V> visited = new HashSet<>();
+
+        queue.offer(v1);
+        prev.put(v1, null);
+        visited.add(v1);
+
+        while (!queue.isEmpty()) {
+            V curr = queue.poll();
+            if (curr.equals(v2)) {
+                // found the destination, construct the path
+                List<V> path = new ArrayList<>();
+                while (curr != null) {
+                    path.add(curr);
+                    curr = prev.get(curr);
+                }
+                Collections.reverse(path);
+                return path;
+            }
+            for (V adj : adjacencyList.get(curr)) {
+                if (!visited.contains(adj)) {
+                    queue.offer(adj);
+                    prev.put(adj, curr);
+                    visited.add(adj);
+                }
+            }
+        }
+        return null; // no path found
     }
 
 }
