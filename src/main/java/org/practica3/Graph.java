@@ -96,34 +96,29 @@ public class Graph<V> {
 
     /******************************************************************
      * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
-     * La complejidad temporal es O(n^2), donde n es el número de vértices en la lista de adyacencia,
-     * para construir la representación de cadena de la lista de adyacencia iterando a través de todos los vértices y
-     * sus vértices adyacentes.
-     * La complejidad espacial es O(n^2) para almacenar la representación de cadena de la lista de adyacencia.
+     * Complejidad temporal: O(V+E), donde V es el número de vértices y E es el número de aristas del grafo.
      *
      * @return una cadena de caracteres con la lista de
      * adyacencia.
      ******************************************************************/
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (V vertex : adjacencyList.keySet()) {
-            sb.append(vertex).append(": ");
-            Set<V> adjacents = adjacencyList.get(vertex);
-            for (V adjacent : adjacents) {
-                sb.append(adjacent).append(", ");
-            }
-            sb.append("\n");
+        StringBuilder str = new StringBuilder("Vertex:\t Connections:\n");
+        for (V vertex : this.adjacencyList.keySet()){
+            str.append(vertex.toString());
+            str.append(adjacencyList.get(vertex).toString() + "\n");
         }
-        return sb.toString();
+        return str.toString();
     }
 
     /*********************************************************
      * Obtiene, en caso de que exista, un camino entre ‘v1‘ y
      * ‘v2‘. En caso contrario, devuelve ‘null‘.
-     * La complejidad temporal es O(|V|+|E|), donde |V| es el número de vértices y |E| es el número de aristas,
-     * para realizar una búsqueda primero en amplitud (BFS) de v1 a v2 y construir la ruta de v1 a v2 usando HashMap.
-     * La complejidad espacial es O(|V|+|E|) para almacenar la cola, el mapa y el conjunto visitado.
+     * Este método implementa el algoritmo de búsqueda en anchura (BFS).
+     * Complejidad temporal: O(V + E), donde V es el número de vértices y E es el número de aristas del grafo.
+     * Mejor caso: O(1), si el vértice de origen v1 es el mismo que el vértice de destino v2.
+     * Peor caso: O(V+E), donde V es el número de vértices y E es el número de aristas en el grafo.
+     * En el peor de los casos, el algoritmo necesita atravesar todos los vértices y aristas del grafo.
      *
      * @param v1 el vértice origen.
      * @param v2 el vértice destino.
@@ -131,23 +126,30 @@ public class Graph<V> {
      * ‘v2‘ * pasando por arcos del grafo.
      *********************************************************/
     public List<V> onePath(V v1, V v2){
-        List<V> trazaList = new ArrayList<>();
-        Stack<V> abierta = new Stack<>();
-        abierta.push(v1);
-        boolean encontrado = false;
-        while (!abierta.empty() && !encontrado) {
-            V vertexTraveler = abierta.pop();
-            trazaList.add(vertexTraveler);
-            if(vertexTraveler.equals(v2)){
-                encontrado = true;
-            }else{
-                for (V adjacentsV : this.adjacencyList.get(vertexTraveler)){
-                    abierta.push(adjacentsV);
+        Map<V, V> parents = new HashMap<>();
+        Queue<V> queue = new LinkedList<>();
+        queue.add(v1);
+        parents.put(v1, null);
+        while (!queue.isEmpty()) {
+            V vertex = queue.remove();
+            if (vertex.equals(v2)) {
+                List<V> path = new ArrayList<>();
+                V curr = v2;
+                while (curr != null) {
+                    path.add(curr);
+                    curr = parents.get(curr);
+                }
+                Collections.reverse(path);
+                return path;
+            }
+            for (V adj : this.adjacencyList.get(vertex)) {
+                if (!parents.containsKey(adj)) {
+                    queue.add(adj);
+                    parents.put(adj, vertex);
                 }
             }
-            if(encontrado) return trazaList;
         }
-        return null;
+        return null; // no se ha encontrado camino
     }
 
 }

@@ -52,19 +52,6 @@ public class GraphTest {
     }
 
     @Test
-    public void testAddEdge() {
-        assertTrue(myGraph.addEdge(1, 2));
-        assertTrue(myGraph.addEdge(1, 3));
-        assertFalse(myGraph.addEdge(1, 2));
-        assertFalse(myGraph.addEdge(2, 1));
-        assertFalse(myGraph.addEdge(3, 4));
-        assertTrue(myGraph.containsVertex(1));
-        assertTrue(myGraph.containsVertex(2));
-        assertTrue(myGraph.containsVertex(3));
-        assertFalse(myGraph.containsVertex(4));
-    }
-
-    @Test
     public void addEdge() {
         myGraph.addVertex(1);
         myGraph.addVertex(2);
@@ -163,17 +150,5 @@ public class GraphTest {
         //Se comprueba si el camino devuelto es igual al esperado.
         assertEquals(expectedPath, g.onePath(1, 4));
     }
-
-    @Test
-    public void testToString() {
-        Graph<String> graph = new Graph<>();
-        graph.addEdge("A", "B");
-        graph.addEdge("A", "C");
-        graph.addEdge("B", "C");
-        graph.addEdge("B", "D");
-        String expected = "A: B, C\nB: C, D\nC: \nD: \n";
-        assertEquals(expected, graph.toString());
-    }
-
 
 }

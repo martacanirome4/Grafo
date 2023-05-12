@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.practica3.GraphTest" time="0.079" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.practica3.GraphTest" time="0.071" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter11121080923714325667.jar /Users/martacaninoromero/IdeaProjects/graph/target/surefire 2023-05-12T15-27-10_945-jvmRun1 surefire8807387149344277769tmp surefire_012385411520298926038tmp"/>
+    <property name="sun.java.command" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter13606868087899836300.jar /Users/martacaninoromero/IdeaProjects/graph/target/surefire 2023-05-12T16-12-05_933-jvmRun1 surefire5544256057926407237tmp surefire_0734127462229428879tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/test-classes:/Users/martacaninoromero/IdeaProjects/graph/target/classes:/Users/martacaninoromero/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/martacaninoromero/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter11121080923714325667.jar"/>
+    <property name="surefire.real.class.path" value="/Users/martacaninoromero/IdeaProjects/graph/target/surefire/surefirebooter13606868087899836300.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="20"/>
@@ -58,14 +58,16 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="addEdge" classname="org.practica3.GraphTest" time="0.006"/>
-  <testcase name="testToString" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="testContainsVertex" classname="org.practica3.GraphTest" time="0.007"/>
+  <testcase name="addEdge" classname="org.practica3.GraphTest" time="0"/>
   <testcase name="containsVertex" classname="org.practica3.GraphTest" time="0"/>
   <testcase name="addVertexFalse" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="onePathFindsAPath" classname="org.practica3.GraphTest" time="0.002"/>
   <testcase name="addEdgeFalse" classname="org.practica3.GraphTest" time="0"/>
-  <testcase name="addVertex" classname="org.practica3.GraphTest" time="0"/>
-  <testcase name="OnePath" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="addVertex" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="testAddVertex" classname="org.practica3.GraphTest" time="0"/>
+  <testcase name="testObtainAdjacents" classname="org.practica3.GraphTest" time="0.002"/>
   <testcase name="obtainAdjacents" classname="org.practica3.GraphTest" time="0"/>
   <testcase name="obtainAdjacentsFalse" classname="org.practica3.GraphTest" time="0.001"/>
-  <testcase name="containsVertexFalse" classname="org.practica3.GraphTest" time="0.001"/>
+  <testcase name="containsVertexFalse" classname="org.practica3.GraphTest" time="0"/>
 </testsuite>
