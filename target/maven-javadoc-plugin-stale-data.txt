@@ -1,0 +1,46 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'/Users/martacaninoromero/IdeaProjects/graph/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'graph 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/Users/martacaninoromero/IdeaProjects/graph/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'graph 1.0-SNAPSHOT API'
+org.practica3
+/Users/martacaninoromero/IdeaProjects/graph/src/main/java = 1683714489538
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/tag-search-index.js = 1683892215536
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/overview-tree.html = 1683892215517
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/module-search-index.js = 1683892215534
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/index.html = 1683892215553
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/package-search-index.js = 1683892215535
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/index-all.html = 1683892215548
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/allpackages-index.html = 1683892215533
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/member-search-index.js = 1683892215535
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/copy.svg = 1683892215570
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/script.js = 1683892215569
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/stylesheet.css = 1683892215568
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/search-page.js = 1683892215573
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/help-doc.html = 1683892215564
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/element-list = 1683892215484
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/search.html = 1683892215551
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/allclasses-index.html = 1683892215531
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/type-search-index.js = 1683892215535
+/Users/martacaninoromero/IdeaProjects/graph/target/site/apidocs/search.js = 1683892215572

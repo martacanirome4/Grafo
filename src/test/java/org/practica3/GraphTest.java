@@ -43,24 +43,10 @@ public class GraphTest {
     }
 
     @Test
-    public void addEdgeNonExistentVertex() {
-    }
-
-    @Test
-    public void addExistentEdge() {
-
-    }
-
-    @Test
     public void addEdge() {
         myGraph.addVertex("A");
         myGraph.addVertex("B");
         assertTrue(myGraph.addEdge("A", "B"));
-    }
-
-
-    @Test
-    public void obtainAdjacentsNonExistentVertex() {
     }
 
     @Test
@@ -74,21 +60,10 @@ public class GraphTest {
     }
 
     @Test
-    public void containsVertexNonExistentVertex() {}
-
-    @Test
     public void containsVertex() {
         assertFalse(myGraph.containsVertex("A"));
         myGraph.addVertex("A");
         assertTrue(myGraph.containsVertex("A"));
-    }
-
-    @Test
-    public void depthFirstSearch() {
-    }
-
-    @Test
-    public void breadthFirstSearch() {
     }
 
     @Test
