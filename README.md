@@ -10,15 +10,15 @@ Para compilar y ejecutar el proyecto, y al tratarse de un proyecto 'Maven' será
 3. Ejecutar el comando 'mvn test'
 4. Ejecutar el comando 'mvn javadoc:javadoc'
 
-Automáticamente, el proyecto será compilado y los tests serán ejecutados, mostrando por pantalla aquellos que no hayan pasado con éxito, o no.
+Automáticamente, el proyecto será compilado y los tests serán ejecutados, mostrando por pantalla aquellos que hayan sido pasados con éxito, y los que no.
 
-## Documentación
+## Documentación adicional
 Además de la implementación del proyecto, dentro del fichero se encuentran una serie de archivos de apoyo, los cuales son:
 - Diagrama UML de la estructura de clases y funciones, en los archivos:
   - GraphDiagram.png
   - GraphPlantUML.xmi
   - graphDiagram.uml
-- Javadoc con documentación del proyecto, en la ruta:
+- Javadoc con la documentación de la APIs en formato HTML del proyecto, en la ruta:
   - /target/site/apidocs
   
 
