@@ -4,17 +4,17 @@ En este proyecto se ha implementado una estructura de datos Grafo usando un Hash
 Esta implementación permite agregar y eliminar vértices y bordes de manera eficiente, y también permite encontrar 
 el camino entre dos vértices mediante búsqueda en amplitud (Breadth First Search) (BFS).
 
-# ¿Qué es un grafo?
+## ¿Qué es un grafo?
 Un grafo es una estructura de datos que consta de un conjunto de vértices (o nodos) y un conjunto de aristas que 
 conectan esos vértices. Los grafos se usan para representar relaciones entre objetos o entidades, y se usan comúnmente 
 en informática y muchos otros campos.
 
-# ¿Qué es un HashMap?
+## ¿Qué es un HashMap?
 Un HashMap es una estructura de datos que permite almacenar y recuperar pares clave-valor. 
 Proporciona un rendimiento de tiempo constante para la mayoría de las operaciones, lo que la convierte en una estructura
 de datos muy eficiente para muchos casos de uso.
 
-## Detalles de implementación
+## Detalles de la implementación
 Cada vértice se representa como una clave en HashMap, y el valor asociado con cada clave es una lista de vértices
 adyacentes. Esto nos permite agregar y eliminar vértices y aristas de manera eficiente, y también encontrar rápidamente
 los vecinos de un vértice dado.
@@ -43,6 +43,7 @@ Además de la implementación del proyecto, dentro del fichero se encuentran una
   - graphPlantUML
 - Javadoc con la documentación de la APIs en formato HTML del proyecto, en la ruta:
   - /target/site/apidocs
+- Comentarios acerca de la complejidad de cada método
   
 
 ### Autor
