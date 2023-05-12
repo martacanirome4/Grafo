@@ -13,15 +13,12 @@
  */
 package org.practica3;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertNull;
-
 import java.util.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class GraphTest {
 
@@ -34,12 +31,18 @@ public class GraphTest {
         myEdge = new Graph<>();
     }
 
-
     @Test
     public void addVertex() {
         assertTrue(myGraph.addVertex("A"));
         assertTrue(myGraph.containsVertex("A"));
         assertFalse(myGraph.addVertex("A"));
+        assertFalse(myGraph.containsVertex("B"));
+    }
+
+    @Test
+    public void addVertexFalse() {
+        assertTrue(myGraph.addVertex("A"));
+        assertFalse(myGraph.containsVertex("B"));
     }
 
     @Test
@@ -47,6 +50,14 @@ public class GraphTest {
         myGraph.addVertex("A");
         myGraph.addVertex("B");
         assertTrue(myGraph.addEdge("A", "B"));
+    }
+
+    @Test
+    public void addEdgeFalse() {
+        myGraph.addVertex("A");
+        myGraph.addVertex("B");
+        assertTrue(myGraph.addEdge("A", "B"));
+        assertFalse(myGraph.addEdge("A", "B"));
     }
 
     @Test
@@ -60,10 +71,28 @@ public class GraphTest {
     }
 
     @Test
+    public void obtainAdjacentsFalse() throws Exception {
+        myGraph.addVertex("A");
+        myGraph.addVertex("B");
+        myGraph.addEdge("A", "B");
+        Set<String> adjacents = myGraph.obtainAdjacents("A");
+        assertFalse(adjacents.contains("C"));
+    }
+
+    @Test
     public void containsVertex() {
         assertFalse(myGraph.containsVertex("A"));
         myGraph.addVertex("A");
         assertTrue(myGraph.containsVertex("A"));
+    }
+
+    @Test
+    public void containsVertexFalse() {
+        myGraph.addVertex("A");
+        assertTrue(myGraph.containsVertex("A"));
+        assertFalse(myGraph.containsVertex("C"));
+        assertFalse(myGraph.addVertex("A"));
+
     }
 
     @Test
