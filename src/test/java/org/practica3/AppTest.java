@@ -14,11 +14,10 @@ package org.practica3;
  */
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,18 +28,13 @@ class GraphTest {
     Graph<Integer> myGraph;
     Graph<Integer> myEdge;
 
-    @Before
-    public void setup(){
-        myGraph = new Graph<Integer>();
-        myEdge = new Graph<Integer>();
-    }
-
-    @Test
-    void addExistentVertex() {
-    }
 
     @Test
     void addVertex() {
+        Graph<String> graph = new Graph<>();
+        assertTrue(graph.addVertex("A"));
+        assertTrue(graph.containsVertex("A"));
+        assertFalse(graph.addVertex("A"));
     }
 
     @Test
@@ -48,10 +42,20 @@ class GraphTest {
     }
 
     @Test
-    void addExistentEdge() {}
+    void addExistentEdge() {
+
+    }
 
     @Test
-    void addEdge() {}
+    void addEdge() throws Exception {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        assertTrue(graph.addEdge("A", "B"));
+        assertTrue(graph.obtainAdjacents("A").contains("B"));
+        assertFalse(graph.addEdge("A", "B"));
+        assertFalse(graph.addEdge("C", "D"));
+    }
 
 
     @Test
@@ -59,14 +63,26 @@ class GraphTest {
     }
 
     @Test
-    void obtainAdjacents() {
+    void obtainAdjacents() throws Exception {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addEdge("A", "B");
+        Set<String> adjacents = graph.obtainAdjacents("A");
+        assertEquals(adjacents.size(), 1);
+        assertTrue(adjacents.contains("B"));
     }
 
     @Test
     void containsVertexNonExistentVertex() {}
 
     @Test
-    void containsVertex() {}
+    void containsVertex() {
+        Graph<String> graph = new Graph<>();
+        assertFalse(graph.containsVertex("A"));
+        graph.addVertex("A");
+        assertTrue(graph.containsVertex("A"));
+    }
 
     @Test
     void depthFirstSearch() {
@@ -74,6 +90,24 @@ class GraphTest {
 
     @Test
     void breadthFirstSearch() {
+    }
+
+    @Test
+    public void OnePath() {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addEdge("A", "B");
+        graph.addEdge("B", "C");
+        graph.addEdge("C", "D");
+        graph.addEdge("A", "D");
+        List<String> path = graph.onePath("A", "D");
+        assertEquals(path.size(), 2);
+        assertEquals(path.get(0), "A");
+        assertEquals(path.get(1), "D");
+        assertNull(graph.onePath("B", "A"));
     }
 
 }
