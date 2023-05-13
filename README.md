@@ -24,9 +24,9 @@ Este método toma dos vértices como entrada y devuelve el camino más corto ent
 BFS es un algoritmo de recorrido de gráficos que explora todos los vértices en el mismo nivel antes de pasar al siguiente.
 
 Visualmente:
-![ejemplo_grafo](https://github.com/martacanirome4/Grafo/assets/50625677/4f90702b-6b46-4457-98d6-256170bf8f4e)
+![graph](https://github.com/martacanirome4/Grafo/assets/50625677/42bb545d-ffa2-45ae-8595-2a83b8cc08d6)
 
-Fuente: https://www.softwaretestinghelp.com/java-graph-tutorial/
+Fuente: [https://www.softwaretestinghelp.com/java-graph-tutorial/](https://stackoverflow.com/questions/15050073/hashmap-representation-of-graph)
 
 ## Compilar y ejecutar el proyecto
 
