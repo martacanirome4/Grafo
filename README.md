@@ -1,64 +1,93 @@
-# Grafo
+# 🕸️ Implementación de Grafo con HashMap en Java
 
-En este proyecto se ha implementado una estructura de datos Grafo usando un HashMap como estructura de datos subyacente.
-Esta implementación permite crear y borrar vértices y aristas de manera eficiente, así como encontrar 
-el camino entre dos vértices mediante Búsqueda en Anchura ó Breadth First Search (BFS).
+![Java](https://img.shields.io/badge/language-Java-orange)
+![License](https://img.shields.io/badge/license-Apache_2.0-lightgrey)
+![Maven](https://img.shields.io/badge/build-Maven-blue)
 
-## ¿Qué es un grafo?
-Un grafo es una estructura de datos que consta de un conjunto de vértices (o nodos) y un conjunto de aristas que 
-conectan esos vértices. Los grafos se usan para representar relaciones entre objetos o entidades, y se usan comúnmente 
-en informática y muchos otros campos.
+### 🚀 Este proyecto implementa un **grafo eficiente** con un `HashMap`, permitiendo operaciones como añadir/borrar vértices y aristas, y hallar caminos con **BFS** (Breadth First Search).
 
-## ¿Qué es un HashMap?
-Un HashMap es una estructura de datos que permite almacenar y recuperar pares clave-valor. 
-Proporciona un rendimiento de tiempo constante para la mayoría de las operaciones, lo que la convierte en una estructura
-de datos muy eficiente para muchos casos de uso.
+---
 
-## Detalles de la implementación
-Cada vértice se representa como una clave en HashMap, y el valor asociado con cada clave es una lista de vértices
-adyacentes. Esto nos permite agregar y eliminar vértices y aristas de manera eficiente, y también encontrar rápidamente
-los vecinos de un vértice dado.
+## 📖 ¿Qué es un Grafo?
 
-El método principal implementado en este proyecto es el método findPath. 
-Este método toma dos vértices como entrada y devuelve el camino más corto entre ellos usando BFS. 
-BFS es un algoritmo de recorrido de gráficos que explora todos los vértices en el mismo nivel antes de pasar al siguiente.
+Un **grafo** es una estructura compuesta por **vértices (nodos)** y **aristas (conexiones)**.  
+Representa relaciones entre entidades, y es usado en informática, redes, IA, mapas, etc.
 
-Visualmente:
+> Ejemplo: redes sociales, rutas de navegación, circuitos.
+
+---
+
+## 🗂️ Estructura de Datos - HashMap
+
+- Cada **vértice** es una **clave** en un `HashMap`.
+- El **valor** asociado es una lista de **vértices adyacentes**.
+- Permite acceso rápido a vecinos y eficiente manejo de operaciones.
+
+```java
+Map<Vertex, List<Vertex>> graph = new HashMap<>();
+```
+
+---
+
+## 🔍 Funcionalidad Clave
+
+### 🔄 BFS – Búsqueda en Anchura
+
+Método: `findPath(vertex1, vertex2)`  
+- Encuentra el **camino más corto** entre dos vértices.
+- Usa **cola** para explorar niveles progresivos del grafo.
+- Ideal para grafos no ponderados.
+
+---
+
+## 🖼️ Visual del Grafo
+
 ![graph](https://github.com/martacanirome4/Grafo/assets/50625677/42bb545d-ffa2-45ae-8595-2a83b8cc08d6)
 
-Fuente: [https://www.softwaretestinghelp.com/java-graph-tutorial/](https://stackoverflow.com/questions/15050073/hashmap-representation-of-graph)
+> Fuente: [Java Graph Tutorial](https://www.softwaretestinghelp.com/java-graph-tutorial/)
 
-## Compilar y ejecutar el proyecto
+---
 
-Para compilar y ejecutar el proyecto, y al tratarse de un proyecto 'Maven' será necesario:
+## ⚙️ Compilar y Ejecutar (Maven)
 
-1. Clonar el repositorio en el sistema local
-2. Abrir una nueva ventana en la terminal y navegar hasta el directorio del proyecto
-3. Ejecutar el comando 'mvn test'
-4. Ejecutar el comando 'mvn javadoc:javadoc'
+1. Clona este repositorio:
+   ```bash
+   git clone <repo-url>
+   cd Grafo/
+   ```
 
-Automáticamente, el proyecto será compilado y los tests serán ejecutados, mostrando por pantalla aquellos que hayan sido pasados con éxito, y los que no.
+2. Compila y ejecuta los tests:
+   ```bash
+   mvn test
+   ```
 
-## Documentación adicional
-Además de la implementación del proyecto, dentro del fichero se encuentran una serie de archivos de apoyo, los cuales son:
-- Diagrama UML de la estructura de clases y funciones, en los archivos:
-  - graph.uml
-  - graphDiagram.png
-  - graphPlantUML
-- Javadoc con la documentación de la APIs en formato HTML del proyecto, en la ruta:
-  - /target/site/apidocs
-- Comentarios acerca de la complejidad de cada método
-  
+3. Genera documentación Javadoc:
+   ```bash
+   mvn javadoc:javadoc
+   ```
 
-### Autor
-Marta Canino Romero, @martacanirome4 - GitHub 2023
+📋 Los resultados de los tests se mostrarán en terminal.  
+📁 Documentación HTML disponible en `/target/site/apidocs`.
 
-### Licencia
-Copyright 2023 Marta Canino Romero
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License.
+---
+
+## 📚 Recursos Adicionales
+
+- 📊 Diagrama UML → `graphDiagram.png`, `graph.uml`
+- 📝 Análisis de complejidad → Comentarios en código
+- 📂 Javadoc → Documentación completa del proyecto
+
+> Explora la arquitectura interna del grafo con visualizaciones y documentación.
+
+---
+
+## 👩‍💻 Autora
+
+Marta Canino Romero – 2023  
+[GitHub](https://github.com/martacanirome4)
+
+---
+
+## 📄 Licencia
+
+Licensed under the Apache License 2.0 – [Ver licencia](http://www.apache.org/licenses/LICENSE-2.0)
